@@ -1,0 +1,7 @@
+[package]
+name = "rusty-bank"
+version = "0.1.0"
+authors = ["Paul-Claudiu Orha <paul.orha@halcyonmobile.com>"]
+edition = "2018"
+
+[dependencies]
