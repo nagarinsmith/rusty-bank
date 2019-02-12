@@ -1,7 +1,8 @@
 pub trait Bank {
     fn deposit(&mut self, val: i32);
     fn withdraw(&mut self, val: i32) -> bool;
-    fn balance_inquiry(self) -> i32;
+    fn withdraw_cost(&self) -> i32 { 0 }
+    fn balance_inquiry(&self) -> i32;
 }
 
 #[derive(Copy, Clone)]
@@ -17,15 +18,15 @@ impl Bank for FirstBank {
     }
 
     fn withdraw(&mut self, amount: i32) -> bool {
-        if self.balance < amount {
+        if self.balance < amount + self.withdraw_cost() {
             return false;
         } else {
-            self.balance -= amount;
+            self.balance -= amount + self.withdraw_cost();
             return true;
         }
     }
 
-    fn balance_inquiry(self) -> i32 {
+    fn balance_inquiry(&self) -> i32 {
         return self.balance;
     }
 }

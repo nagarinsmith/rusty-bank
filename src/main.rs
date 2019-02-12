@@ -8,7 +8,7 @@ fn main() {
     bank.deposit(100);
     println!("Successful deposit");
     println!("Current balance: {}", bank.balance_inquiry());
-    if bank.withdraw(130) {
+    if bank.withdraw(30) {
         println!("Successful withdraw")
     } else {
         println!("Invalid withdraw, not enough funds!")
